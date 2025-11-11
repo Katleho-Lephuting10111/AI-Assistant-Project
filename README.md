@@ -1,253 +1,204 @@
-# AI-Assistant-Project
+# AI Portfolio Assistant
 
-AI Portfolio Assistant 🤖
+## Project Overview
 
-A full-stack JavaScript web application that generates professional portfolio content using AI. Built with Node.js, Express, and modern web technologies.
+The **AI Portfolio Assistant** is a web-based tool that helps users automatically generate professional materials such as *personal bios* and *“About Me”* sections. The project demonstrates our ability to apply Agile project management (Kanban), use Git and GitHub for collaboration, and integrate a Generative AI API using JavaScript.
 
-🚀 Features
+This project was completed as part of **Week 1 of the Fullstack Developer Program**, focusing on the following courses:
 
-Professional Bio Generator - Create engaging personal bios
+* **Version Control with Git** – Atlassian
+* **Agile with Atlassian Jira** – Atlassian
+* **Introduction to Generative AI** – Google Cloud
+* **ChatGPT Prompt Engineering for Developers** – DeepLearning.AI
 
-Project Summary Creator - Generate comprehensive project descriptions
+---
 
-Learning Reflection Writer - Craft thoughtful learning experiences
+## Features
 
-Responsive Design - Works perfectly on desktop and mobile
+* Generate a professional bio or “About Me” section automatically.
+* Choose tone (Formal, Friendly, or Neutral) to personalize the text.
+* Responsive and simple user interface built with HTML, CSS, and JavaScript.
+* Backend built with Node.js and Express to handle AI API calls securely.
+* API key stored in environment variables (not exposed on the frontend).
+* Easy deployment setup for future hosting on Render or Railway.
 
-Real-time AI Processing - Generate content instantly
+---
 
-🛠️ Tech Stack
-Frontend:
+## Tech Stack
 
-HTML5, CSS3, JavaScript (ES6+)
+### Frontend
 
-Responsive CSS Grid/Flexbox
+* HTML5
+* CSS3
+* JavaScript (Vanilla)
 
-Modern gradient design
+### Backend
 
-Backend:
+* Node.js
+* Express.js
+* dotenv (for environment variables)
+* Fetch or Axios (for API calls)
 
-Node.js runtime
+---
 
-Express.js web framework
+## Installation & Setup
 
-CORS enabled for cross-origin requests
+Follow the steps below to run the project locally:
 
-Environment variable configuration
+### 1. Clone the Repository
 
-📁 Project Structure
-text
-ai-portfolio-assistant-group/
-├── server.js              # Express.js backend server
-├── package.json           # Project dependencies and scripts
-├── public/               # Frontend assets (served statically)
-│   ├── index.html        # Main application interface
-│   ├── style.css         # Responsive styling and design
-│   └── script.js         # Frontend logic and API calls
-├── .env.example          # Environment variables template
-├── .gitignore           # Git ignore rules
-└── README.md            # Project documentation
+```bash
+git clone https://github.com/your-username/ai-portfolio-assistant.git
+cd ai-portfolio-assistant
+```
 
-👥 Team Members & Responsibilities
+### 2. Install Dependencies (Backend)
 
-MuziSitsha: Frontend Developer
-Responsibilities: UI/UX design, responsive layout, user interaction
-
-Files: public/index.html, public/style.css, public/script.js
-
-Branch: frontend-by-Muziwakhe
-
-MpiloG29: Backend Developer
-Responsibilities: Server setup, API development, error handling
-
-Files: server.js
-
-Branch: backend-by-CelimpiloGumede
-
-Katleho-Lephuting10111: Project Manager & AI Specialist
-Responsibilities: Project coordination, documentation, AI integration
-
-Files: package.json, README.md, .gitignore, .env.example
-
-Branch: main
-
-🚀 Installation & Setup
-Prerequisites
-Node.js (v14 or higher)
-
-npm (Node Package Manager)
-
-Quick Start
-bash
-# Clone the repository
-git clone https://github.com/your-username/ai-portfolio-assistant-group.git
-
-# Navigate to project directory
-cd ai-portfolio-assistant-group
-
-# Install dependencies
+```bash
+cd backend
 npm install
+```
 
-# Start the development server
-npm start
+### 3. Create an `.env` File
 
-# Open your browser and visit:
-# http://localhost:5000
-Development Scripts
-bash
-npm start          # Start production server
-npm run dev        # Start development server with nodemon
-🎯 How to Use
-Select Content Type - Choose between Bio, Project Summary, or Learning Reflection
+Inside the `backend` folder, create a file named `.env` and add your API key:
 
-Enter Your Information - Provide details about your experience, projects, or learning journey
-
-Generate Content - Click the button to create professional AI-powered content
-
-Copy & Use - Use the generated content in your portfolio, LinkedIn, or applications
-
-Example Inputs:
-Bio: "2 years web development, Python, JavaScript, React projects"
-
-Project: "E-commerce website with shopping cart and payment processing"
-
-Reflection: "Learning Git version control and Agile methodologies"
-
-🔧 API Endpoints
-POST /generate
-Generates AI-powered content based on user input.
-
-Request Body:
-
-json
-{
-  "type": "bio|project|reflection",
-  "input": "User description here"
-}
-Response:
-
-json
-{
-  "success": true,
-  "content": "Generated professional content..."
-}
-🏗️ Development Workflow
-Branch Strategy
-main - Production-ready code
-
-frontend-ui - Frontend development
-
-backend-api - Backend development
-
-project-setup - Project configuration
-
-Contributing
-Create a feature branch from main
-
-Make your changes and commit with descriptive messages
-
-Push your branch and create a Pull Request
-
-Request review from teammates
-
-Merge after approval
-
-Git Commands
-bash
-# Create and switch to new branch
-git checkout -b feature-branch-name
-
-# Add and commit changes
-git add .
-git commit -m "Descriptive commit message"
-
-# Push to GitHub
-git push origin feature-branch-name
-📋 Agile Methodology
-User Stories
-✅ As a user, I want to generate professional bios
-
-✅ As a user, I want to create project summaries
-
-✅ As a user, I want to write learning reflections
-
-✅ As a developer, I want a responsive web interface
-
-✅ As a developer, I want a robust backend API
-
-Kanban Board
-We use GitHub Projects with columns:
-
-To Do - Planned features
-
-In Progress - Currently being developed
-
-Review - Ready for code review
-
-Done - Completed and tested
-
-🐛 Troubleshooting
-Common Issues
-Port already in use:
-
-bash
-# Change port in server.js
-const PORT = process.env.PORT || 5001;
-Dependencies not installed:
-
-bash
-npm install
-CORS errors:
-
-Ensure cors middleware is enabled in server.js
-
-🌐 Deployment
-Environment Variables
-Create a .env file based on .env.example:
-
-env
+```bash
+API_KEY=your_openai_or_gemini_api_key_here
 PORT=5000
-OPENAI_API_KEY=your_api_key_here
-Production Deployment
-The application is ready for deployment on:
+```
 
-Heroku
+### 4. Start the Backend Server
 
-Vercel
+```bash
+node server.js
+```
 
-Netlify
+You should see:
 
-Railway
+```
+Server running on http://localhost:5000
+```
 
-Any Node.js hosting platform
+### 5. Open the Frontend
 
-📞 Support
-For issues and questions:
+Open the `index.html` file in your browser or use Live Server in VS Code.
 
-Check existing GitHub issues
+Ensure that your frontend fetches from:
 
-Create a new issue with detailed description
+```
+http://localhost:5000/generate-bio
+```
 
-Tag relevant team members
+---
 
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Project Structure
 
-🎓 Learning Outcomes
-This project demonstrates:
+```
+ai-portfolio-assistant/
+├── backend/
+│   ├── server.js
+│   ├── package.json
+│   ├── .env
+│   └── README.md
+│
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── .gitignore
+├── README.md
+└── LICENSE
+```
 
-Full-stack JavaScript development
+---
 
-Agile team collaboration
+## 💡 How It Works
 
-Git version control workflows
+1. The user enters their **name**, **skills**, and **career goals** in the frontend form.
+2. The frontend sends this data to the **backend API** using a POST request.
+3. The backend formats the prompt and calls the **Generative AI API** (Gemini).
+4. The AI’s response (a professional bio paragraph) is returned and displayed on the frontend.
 
-REST API design and implementation
+---
 
-Responsive web design principles
+## Example Prompt
 
-AI integration concepts
+```
+Generate a professional “About Me” section for a software developer named Katleho who is passionate about AI, technology, and creativity. Use a friendly and professional tone.
+```
 
-Built by INNIT!
+**Example Output:**
+
+> Hi, I’m John — a passionate developer who loves blending creativity and technology to build meaningful solutions. I’m fascinated by the potential of AI to empower people and make digital experiences smarter.
+
+---
+
+## 🧑‍🤝‍🧑 Team Members & Roles
+
+| Name     | Role                  | Responsibilities                            |
+| -------- | --------------------- | ------------------------------------------- |
+
+| Katleho  | Documentation & Project Management| project structure setup, documentation, coordinating merges & Testing|
+
+| Muzi   | Frontend     | HTML/CSS layout, JavaScript form handling, Styling, responsiveness, UI components   |
+
+| Celimpilo | Backend      | Node.js setup, API integration, deployment  |
 
 
+---
+
+## Kanban Workflow Summary
+
+We managed the project using a **Kanban board** in Github:
+
+* **Columns:** Backlog → To Do → In Progress → In Review → Done
+* **WIP Limits:** In Progress (3), In Review (2)
+* **Daily Workflow:** Cards moved across stages as tasks progressed.
+* **Blockers:** Backend deployment link inaccessible due to localhost hosting — fix in progress.
+
+---
+
+## Known Issues
+
+* Backend currently runs only locally — deployment pending.
+* API rate limit restrictions may apply for free API keys.
+
+---
+
+## Future Improvements
+
+* Deploy fullstack app on Render or Railway.
+* Add user authentication and portfolio saving feature.
+* Extend functionality to generate resumes or cover letters.
+* Improve prompt templates for more dynamic outputs.
+
+
+## Lessons Learned
+
+* Practical understanding of **Agile with Kanban**.
+* Hands-on use of **GitHub collaboration and branching**.
+* Experience in **fetching AI API responses** using JavaScript.
+* Importance of **CORS configuration** and **environment variable security**.
+
+---
+
+## Submission Package Includes
+
+* README.md (this file)
+* Sprint Planning / Agile Kanban Document
+* Trello Board Screenshots
+* GitHub Repository Link
+* Deployed App (if available)
+* Demo GIF or Screenshots
+
+---
+
+## License
+
+This project is licensed under the MIT License 
+
+---
+
+**Created by INNIT!
