@@ -47,6 +47,7 @@ ai-portfolio-assistant-group/
 ├── .env.example          # Environment variables template
 ├── .gitignore           # Git ignore rules
 └── README.md            # Project documentation
+
 👥 Team Members & Responsibilities
 
 MuziSitsha: Frontend Developer
